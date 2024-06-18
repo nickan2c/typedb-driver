@@ -15,8 +15,9 @@
 # specific language governing permissions and limitations
 # under the License.
 
+load("@vaticle_dependencies//tool/checkstyle:rules.bzl", "checkstyle_test")
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
-
+# TODO: Consider mergin everything into api/BUILD
 go_library(
     name = "database",
     srcs = [
@@ -25,4 +26,12 @@ go_library(
     ],
     importpath = "typedb_driver/go/api/database",
     visibility = ["//visibility:public"],
+)
+
+
+checkstyle_test(
+    name = "checkstyle",
+    include = glob(["*"]),
+    license_type = "apache-header",
+    size = "small",
 )
