@@ -17,7 +17,8 @@
 
 load("@vaticle_dependencies//tool/checkstyle:rules.bzl", "checkstyle_test")
 load("@io_bazel_rules_go//go:def.bzl", "go_library")
-# TODO: Consider mergin everything into api/BUILD
+
+# TODO: Consider merging everything into api/BUILD
 go_library(
     name = "user",
     srcs = [
